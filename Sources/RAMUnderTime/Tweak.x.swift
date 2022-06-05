@@ -22,11 +22,12 @@ class _UIStatusBarStringView_Hook: ClassHook<_UIStatusBarStringView> {
     }
     
     func setText(_ text: String) {
+        let txt = text.replace("16:20", "4:20").replace("04:20", "4:20)
         if RUT_Label_Is_Suitable() {
-            let txt = text.contains(RUT_separator_text()) ? text.components(separatedBy: RUT_separator_text())[0] : text
+            let txt = txt.contains(RUT_separator_text()) ? txt.components(separatedBy: RUT_separator_text())[0] : txt
             orig.setText("\(txt)\(RUT_separator_text())\(GSMemory().get_free_mem()) MB")
         } else {
-            orig.setText(text)
+            orig.setText(txt)
         }
     }
 
