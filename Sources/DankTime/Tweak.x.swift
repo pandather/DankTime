@@ -15,17 +15,12 @@ class _UIStatusBarStringView_Hook: ClassHook<_UIStatusBarStringView> {
         guard RUT_Label_Is_Suitable() else {
             return
         }
-       
-        target.numberOfLines = 2
-        target.textAlignment = NSTextAlignment.center
-        target.font = UIFont.systemFont(ofSize: 12)
     }
     
     func setText(_ text: String) {
-        let txt = text.replace("16:20", "4:20").replace("04:20", "4:20)
-        if RUT_Label_Is_Suitable() {
-            let txt = txt.contains(RUT_separator_text()) ? txt.components(separatedBy: RUT_separator_text())[0] : txt
-            orig.setText("\(txt)\(RUT_separator_text())\(GSMemory().get_free_mem()) MB")
+	let txt = text.replacingOccurrences(of: "04:20", with: "4:20", options: .literal, range: nil).replacingOccurrences(of: "18:03", with: "4:20", options: .literal, range: nil)
+	if RUT_Label_Is_Suitable() {
+            orig.setText(txt)
         } else {
             orig.setText(txt)
         }
@@ -44,11 +39,6 @@ class _UIStatusBarStringView_Hook: ClassHook<_UIStatusBarStringView> {
     //orion: new
     func RUT_is_FaceID_iPhone() -> Bool {
         return (!UIDevice.currentIsIPad() && UIDevice.tf_deviceHasFaceID())
-    }
-    
-    //orion: new
-    func RUT_separator_text() -> String {
-        return RUT_is_FaceID_iPhone() ? "\n" : " - "
     }
 }
 

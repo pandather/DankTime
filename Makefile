@@ -1,15 +1,15 @@
 ARCHS = arm64 arm64e
-THEOS_DEVICE_IP = 192.168.1.106#localhost -p 2222
-TARGET := iphone:clang:14.4:13.0
+THEOS_DEVICE_IP = Xr#localhost -p 2222
+TARGET := iphone:clang:14.5:14.5
 INSTALL_TARGET_PROCESSES = SpringBoard
 PACKAGE_VERSION = 3.0
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = RAMUnderTime
+TWEAK_NAME = DankTime
 
-RAMUnderTime_FILES = $(shell find Sources/RAMUnderTime -name '*.swift') $(shell find Sources/RAMUnderTimeC -name '*.m' -o -name '*.c' -o -name '*.mm' -o -name '*.cpp')
-RAMUnderTime_SWIFTFLAGS = -ISources/RAMUnderTimeC/include
-RAMUnderTime_CFLAGS = -fobjc-arc -ISources/RAMUnderTimeC/include
+DankTime_FILES = $(shell find Sources/DankTime -name '*.swift') $(shell find Sources/DankTimeC -name '*.m' -o -name '*.c' -o -name '*.mm' -o -name '*.cpp')
+DankTime_SWIFTFLAGS = -ISources/DankTimeC/include
+DankTime_CFLAGS = -fobjc-arc -ISources/DankTimeC/include
 
 include $(THEOS_MAKE_PATH)/tweak.mk
