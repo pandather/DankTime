@@ -1,4 +1,4 @@
-module RAMUnderTimeC {
+module DankTimeC {
     umbrella "."
     export *
 }

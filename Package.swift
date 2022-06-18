@@ -65,23 +65,23 @@ let swiftFlags: [String] = libFlags + [
 ]
 
 let package = Package(
-    name: "RAMUnderTime",
+    name: "DankTime",
     platforms: [.iOS(deploymentTarget)],
     products: [
         .library(
-            name: "RAMUnderTime",
-            targets: ["RAMUnderTime"]
+            name: "DankTime",
+            targets: ["DankTime"]
         ),
     ],
     targets: [
         .target(
-            name: "RAMUnderTimeC",
+            name: "DankTimeC",
             cSettings: [.unsafeFlags(cFlags)],
             cxxSettings: [.unsafeFlags(cxxFlags)]
         ),
         .target(
-            name: "RAMUnderTime",
-            dependencies: ["RAMUnderTimeC"],
+            name: "DankTime",
+            dependencies: ["DankTimeC"],
             swiftSettings: [.unsafeFlags(swiftFlags)]
         ),
     ]

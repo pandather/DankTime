@@ -1,10 +1,10 @@
-Package: com.ginsu.ramundertime
-Name: RAMUnderTime
-Version: 0.0.1
+Package: rip.bongs.danktime
+Name: DankTime
+Version: 4.2.0
 Architecture: iphoneos-arm
 Description: Shows the amount of free RAM in the status bar.
-Maintainer: Ginsu
-Author: Ginsu
+Maintainer: pandather
+Author: pandather
 Section: Tweaks
 Depends: ${ORION}, firmware (>= 12.2)
-Depiction: https://ginsudev.github.io/repo/depictions/ramundertime/index.html
+Depiction: https://repo.bongs.rip/depiction/web/rip.bongs.danktime.html

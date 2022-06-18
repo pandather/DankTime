@@ -1,6 +1,6 @@
 import Orion
 import UIKit
-import RAMUnderTimeC
+import DankTimeC
 
 class _UIStatusBarStringView_Hook: ClassHook<_UIStatusBarStringView> {
 
@@ -18,7 +18,7 @@ class _UIStatusBarStringView_Hook: ClassHook<_UIStatusBarStringView> {
     }
     
     func setText(_ text: String) {
-	let txt = text.replacingOccurrences(of: "04:20", with: "4:20", options: .literal, range: nil).replacingOccurrences(of: "18:03", with: "4:20", options: .literal, range: nil)
+	let txt = text.replacingOccurrences(of: "04:20", with: "4:20", options: .literal, range: nil).replacingOccurrences(of: "16:20", with: "4:20", options: .literal, range: nil)
 	if RUT_Label_Is_Suitable() {
             orig.setText(txt)
         } else {
