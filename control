@@ -1,8 +1,8 @@
 Package: rip.bongs.danktime
 Name: DankTime
-Version: 4.2.0
+Version: 4.20
 Architecture: iphoneos-arm
-Description: Shows the amount of free RAM in the status bar.
+Description: Replaces 16:20 and 04:20 with 4:20 in the status bar!
 Maintainer: pandather
 Author: pandather
 Section: Tweaks
